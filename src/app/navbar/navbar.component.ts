@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
+import {ResetHomeService} from '../reset-home.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+   constructor( private resetHomeService: ResetHomeService) {
+   }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  reset() {
+     this.resetHomeService.resetHome();
+   }
 }
