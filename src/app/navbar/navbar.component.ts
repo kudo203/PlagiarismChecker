@@ -1,5 +1,6 @@
-import {Component, HostListener} from '@angular/core';
-import {ResetHomeService} from '../reset-home.service';
+import {Component} from '@angular/core';
+import {ResetHomeService} from '../reset-to-home.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +8,10 @@ import {ResetHomeService} from '../reset-home.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-   constructor( private resetHomeService: ResetHomeService) {
-   }
+  constructor(private resetHomeService: ResetHomeService, private http: HttpClient) {
+  }
 
   reset() {
-     this.resetHomeService.resetHome();
-   }
+    this.resetHomeService.resetToHome();
+  }
 }
